@@ -23,17 +23,36 @@ class AddColorComponent extends Component {
     }
 
     render() {
+        const addColorStyle = {
+            margin: 'auto',
+            height: '30px',
+            padding: '10px'
+        }
+
+        const buttonStyle = {
+            backgroundColor: "#008CBA",
+            border: "none",
+            color: "white",
+            padding: "15px 32px",
+            textAlign: "center",
+            textDecoration: "none",
+            display: "inline-block",
+            fontSize: "12px",
+            borderRadius: "5px",
+            cursor: "pointer"
+        }
+
         return ( 
             <div>
-                <div>
+                <div style={addColorStyle}>
                     <label>Color: </label>
                     <input type="text" onChange={this.colorInputHandler} value={this.state.color}/>
                 </div>
-                <div>
+                <div style={addColorStyle}>
                     <label>Name: </label>
                     <input type="text" onChange={this.nameInputHandler} value={this.state.name}/>
                 </div>
-                <button name="AddColor" onClick={this.onAddHandler}> Add </button>
+                <button name="AddColor" style={buttonStyle} onClick={this.onAddHandler}> Add </button>
             </div> 
         );
     }
