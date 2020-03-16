@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const DisplayColorComponent = (props) => {
+class DisplayColorComponent extends Component {
 
+    render() {
     const DisplayColorStyle = {
         lineHeight: '40px',
         margin: "10px auto",
@@ -9,14 +10,15 @@ const DisplayColorComponent = (props) => {
         height: "50px",
         border: "0.5px solid black",
         borderRadius: "5px",
-        backgroundColor: "red"
+        backgroundColor: this.props.color? this.props.color: '#000000'
     }
 
     return ( 
             <div style={DisplayColorStyle} >
-                {props.enteredName}
+                {this.props.enteredName}
             </div>
         );
+    }
 }
  
 export default DisplayColorComponent;
