@@ -8,12 +8,9 @@ class FavColorComponent extends Component {
         color: '',
     }
 
-    addColorHandler = (name, color) => {
-        this.setState({
-            name: {name},
-            color: {color},
-        })
-        console.log("entered name : " + name + " entered color : " + color);
+    addColorHandler = (colorState) => {
+        this.setState(colorState);
+        console.log("entered name : " + this.state.name + " entered color : " + this.state.color);
     }
 
     
@@ -22,7 +19,7 @@ class FavColorComponent extends Component {
         return (
             <div>
                 <AddColorComponent addColor={(name,color) => {this.addColorHandler(name,color)}} />
-                <DisplayColorComponent enteredName="kumaran" color="black"/>
+                <DisplayColorComponent key="hello" enteredName={this.state.name} color={this.state.color}/>
             </div>);
     }
 }
