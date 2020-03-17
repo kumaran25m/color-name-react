@@ -18,7 +18,7 @@ class FavColorComponent extends Component {
         
         return (
             <div>
-                <AddColorComponent addColor={(name,color) => {this.addColorHandler(name,color)}} />
+                <AddColorComponent addColor={this.addColorHandler}} />
                 <DisplayColorComponent key="hello" enteredName={this.state.name} color={this.state.color}/>
             </div>);
     }
