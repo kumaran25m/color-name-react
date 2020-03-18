@@ -6,7 +6,6 @@ class AddColorComponent extends Component {
     }
 
     onAddHandler = () => {
-        console.log("Add handler called")
         this.props.addColor(this.state);
     }
 
